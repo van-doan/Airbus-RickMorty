@@ -1,0 +1,157 @@
+@import '../../global/scss/config';
+
+// IMG BELONGS TO LOUIS G SIMON (https://dribbble.com/Louis_G_SIMON) //
+
+////////////////////
+// Landing Styles //
+////////////////////
+
+.landing {
+    @media screen and (min-width: $screen-sm-min){
+        overflow-y:hidden;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        height: 95vh;
+        font-family: 'Inter', sans-serif;
+        padding: 0 90px;
+    }
+    @media screen and (max-width: $screen-sm-min){
+        font-family: 'Inter', sans-serif;
+        text-align: center;
+        padding: 0px;
+    }
+    &-container{
+        animation: fadeIn 1s ease-in-out forwards;
+        @include flex(column, center, center);
+        padding: 0 30px;
+        @media screen and (min-width: $screen-sm-min) {
+            width: 100%;
+        }
+        @media screen and (max-width: $screen-sm-min) {
+            width: 100%;
+            padding: 0px;
+        }
+        &-subtitle {
+            animation: fadeIn 1s ease-in-out forwards;
+            align-self: flex-start;
+            font-weight: 600;
+            font-size: 30px;
+            color: #9bf50c;
+            @media screen and (min-width: $screen-sm-min) {
+                font-size: 60px;
+                margin-bottom: 30px;
+            }
+        }
+        &-title {
+            animation: fadeIn 2s ease-in-out forwards;
+            align-self: flex-start;
+            font-weight: 300;
+            font-size: 90px;
+            margin: 0;
+            @media screen and (min-width: $screen-sm-min) {
+                font-size: 160px;
+            }
+        }
+        &-title-desc {
+            animation: fadeIn 2s ease-in;
+            @media screen and (min-width: $screen-sm-min) {
+                align-self: flex-start;
+                margin: 10px 0 48px 12px;
+                font-weight: 300;
+                font-size: 55px;
+            }
+
+            @media screen and (max-width: $screen-sm-min){
+                align-self: center;
+                font-size: 32px;
+            }
+        }
+        &-intro {
+            animation: fadeIn 2s ease-in;
+            @media screen and (min-width: $screen-sm-min) {
+                align-self: flex-start;
+                width: 80%;
+                font-weight: 300;
+                font-size: 25px;
+            }
+            @media screen and (max-width: $screen-sm-min){
+                align-self: center;
+                font-size: 20px
+            }
+            .figma {
+                color: purple;
+                font-weight: 600;
+            }
+            .react {
+                color: rgb(81, 149, 189);
+                font-weight: 600;
+            }
+            .gql {
+                color: rgb(179, 110, 179);
+                font-weight: 600;
+            }
+        }
+        .landing-btn {
+            animation: fadeIn 2s ease-in;
+            margin-top: 36px;
+            padding: 24px;
+            background: #9bf50c;
+            color: #FFF;
+            font-family: 'Inter', sans-serif;
+            border: none;
+            border-radius: 6px;
+            @media screen and (min-width: $screen-sm-min){
+                align-self: flex-start;
+                font-size: 20px
+            }
+            @media screen and (max-width: $screen-sm-min){
+                align-self: center;
+                padding: 18px;
+            }
+            a {
+                color: #FFF !important;
+                text-decoration: none !important;
+
+            }
+        }
+    }
+    &-image-container{
+        animation: fadeIn 3s ease-in-out forwards;
+        @include flex(column, center, center);
+        height: 100vh;
+        width: 70%;
+        padding: 32px;
+        border-radius: 10px;
+        @media screen and (max-width: $screen-sm-min){
+            @include flex(column, center, center);
+            margin-top: 8rem;
+            height: 100%;
+            width: 100%;
+            padding: 0px;
+        }
+        .landing-image{
+            height: 80%;
+            width: 100%;
+            background-image: url('../../static/rick-landing.jpg');
+            background-size:cover;
+            background-position: center;
+            border-radius: 10px;
+            @media screen and (max-width: $screen-md-min){
+                background-position: center;
+                height: 400px;
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

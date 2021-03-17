@@ -1,0 +1,116 @@
+@import '../../global/scss/config';
+
+/////////////////////////////////
+// Character Display Component //
+/////////////////////////////////
+
+.characters {
+    font-family: 'Inter', sans-serif;
+    @media screen and (min-width: $screen-sm-min){
+        @include flex(row, center, center);
+        height: 500px;
+        padding: 40px;
+        background:rgba(255, 255, 255, 0);
+        border-radius: 12px;
+        margin: 10px;
+    }
+    &-module:after{
+        content: '';
+        position: absolute;
+        top: calc(-1 * var(--borderWidth));
+        left: calc(-1 * var(--borderWidth));
+        height: calc(100% + var(--borderWidth) * 2);
+        width: calc(100% + var(--borderWidth) * 2);
+        background: linear-gradient(60deg, #e6e2df, #eeafa3, #f78caa, #de8fec, #63c5ec, #1dc5df, #08d6bb, #54f57c);
+        border-radius: calc(2 * var(--borderWidth));
+        z-index: -1;
+        animation: animatedgradient 3s ease alternate infinite;
+        background-size: 300% 300%;
+    }
+    &-module {
+        width: 300px;
+        --borderWidth: 2px;
+        background: rgba(255, 255, 255, 1) !important;
+        position: relative;
+        border-radius: var(--borderWidth);
+        @media screen and (min-width: $screen-sm-min){
+            @include flex(column, center, center);
+        }
+        &-container{
+            width: 100%;
+            &-name{
+                @include flex(column, center, center);
+                font-family: 'Inter', sans-serif;
+                font-weight: 500;
+                color: #0cabc4;
+                text-align: center;
+            }
+            &-image{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 300px;
+                width: 100%;
+                border-top:#0cabc4 solid thin;
+                box-shadow: 0px 6px 26px -12px #55ffe0;
+                .characters-btn {
+                    background: rgba(255, 255, 255, 0);
+                    border: none;
+                    padding: 10px;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            &-info{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                font-family: 'Inter', sans-serif;
+                font-family: 'Inter', sans-serif;
+                font-weight: 300;
+                text-align: start;
+                background: #fff;
+                padding: 16px 0 16px;
+                width: 100%;
+                border-radius: 0 0 10px 10px;
+                border-top:#0cabc4 solid thin;
+                .alive {
+                    color: rgb(233, 111, 111);
+                }
+                .dead {
+                    color: rgb(61, 61, 61);
+                }
+                .gender, .location, .status, .species, .origin {
+                    margin-left: 12px;
+                    display: flex;
+                    align-items: center;
+                }
+                .gender-icon, .species-icon, .location-icon, .origin-icon, .alive, .dead {
+                    margin-right: 10px;
+                }
+                .species-icon {
+                    color: #63c5ec;
+                }
+                .location-icon {
+                    color: #eeafa3;
+                }
+                .origin-icon{
+                    color: #70eb84;
+                }
+            }
+        }
+    }
+}
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

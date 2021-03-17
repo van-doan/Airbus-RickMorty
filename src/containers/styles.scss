@@ -1,0 +1,72 @@
+@import '../global/scss/config';
+
+//////////////////////
+// Container Styles //
+//////////////////////
+.head{
+    &-nav {
+        @include flex(row, center, center);
+        @media screen and (min-width: $screen-sm-min) {
+            height: 200px;
+        }
+    }
+    &-divider {
+        
+    }
+    .header {
+        @include flex(column, center, center);
+        background-image: url('../static/rick-morty-jumbotron.jpg');
+        background-repeat: no-repeat;
+        background-position-y: 25%;
+        background-size: cover;
+        height: 800px;
+        margin: 40px;
+        border-radius: 10px;
+
+        @media screen and (min-width: $screen-sm-min){
+            
+        }
+        // &-logo {
+        //     @media screen and (min-width: $screen-sm-min){
+        //         font-family: 'Inter', sans-serif;
+        //         font-weight: 300;
+        //         font-size: 100px;
+        //         color: rgb(42, 209, 106);
+        //         margin: 4rem 0 0 0;
+        //     }
+        // }
+        // &-desc {
+        //     @media screen and (min-width: $screen-sm-min){
+        //         font-family: 'Inter', sans-serif;
+        //         font-weight: 300;
+        //         font-size: 40px;
+        //         margin: 0 0 20px 0;
+        //     }
+        // }
+        &-logo, &-desc{
+
+        }
+        
+    }
+    
+    .loading {
+        margin-top: 6rem;
+        text-align:center;
+        font-size: 20px;
+        font-weight: 300;
+        font-family: 'Inter', sans-serif;
+    }
+    
+    .header-hr {
+        width: 30%;
+    }
+    
+    .mapped-character-divs {
+        @media screen and (min-width: $screen-sm-min){
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-flow: wrap;
+        }
+    }
+}
