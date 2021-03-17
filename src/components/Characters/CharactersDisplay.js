@@ -10,19 +10,21 @@ import './styles.scss'
 export function CharactersDisplay({ character }) {
   const [show, setShow] = useState(false);
   const [active, setActive] = useState(null);
-
+  const [rotate, setRotate] = useState(false);
   const toggleCharacterInfo = () => {
     if(!active){
       setShow(true)
       setActive(true)
+      setRotate(true)
     } else {
       setShow(false)
       setActive(false)
+      setRotate(true)
     }
   }
 
   return(
-    <div className="characters">
+    <div className={`characters ${active ? 'characters-origin' : ''}`}>
       <div className="characters-module">
       <div className="characters-module-container"> 
       {show && 

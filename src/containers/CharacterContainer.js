@@ -16,7 +16,7 @@ export function RickMortyCharContainer (){
 
   function renderCharacters () {
     if (!data){
-      return <img className="loading" src={RickMortyLoading}/>
+      return <div style={{background: 'white'}}><img className="loading" src={RickMortyLoading} /></div>
     } else if (data){
       return data.characters.results.map((character) => 
         <CharactersDisplay key={character.id} character={character}/>)
